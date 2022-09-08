@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item >
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="135"
+                android:startColor="#193E73"
+                android:centerColor="#124795"
+                android:endColor="#2F6DC4">
+            </gradient>
+        </shape>
+    </item>
+    <item
+        android:drawable="@drawable/lofinlightlogo"
+        android:bottom="@dimen/_30sdp"
+        android:height="@dimen/_215sdp"
+        android:width="@dimen/_145sdp"
+        android:right="100dp"
+        android:top="0dp" />
+
+</layer-list>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Workspace/Vet System/app/src/main/res/drawable-hdpi/active_background.xml" value="0.1125" />
+        <entry key="..\:/Workspace/Vet System/app/src/main/res/drawable-ldpi/constraint_bg_black.xml" value="0.1835" />
+        <entry key="..\:/Workspace/Vet System/app/src/main/res/drawable-ldpi/constraint_bg_button.xml" value="0.1835" />
+        <entry key="..\:/Workspace/Vet System/app/src/main/res/drawable-ldpi/default_selected.xml" value="0.1615" />
+        <entry key="..\:/Workspace/Vet System/app/src/main/res/drawable-ldpi/drawer_background.xml" value="0.1835" />
+        <entry key="..\:/Workspace/Vet System/app/src/main/res/drawable-ldpi/edittext.xml" value="0.1835" />
+        <entry key="..\:/Workspace/Vet System/app/src/main/res/drawable-ldpi/fingertouchbackground.xml" value="0.1835" />
+        <entry key="..\:/Workspace/Vet System/app/src/main/res/drawable-mdpi/dialog_background.xml" value="0.1615" />
+        <entry key="..\:/Workspace/Vet System/app/src/main/res/drawable-mdpi/fingerprintbooder.xml" value="0.1615" />
+        <entry key="..\:/Workspace/Vet System/app/src/main/res/drawable-xhdpi/visible.xml" value="0.1615" />
+        <entry key="..\:/Workspace/Vet System/app/src/main/res/drawable/background.xml" value="0.1615" />
+        <entry key="..\:/Workspace/Vet System/app/src/main/res/drawable/basic_details_test.xml" value="0.136" />
+        <entry key="..\:/Workspace/Vet System/app/src/main/res/drawable/constraint_bg.xml" value="0.1615" />
+        <entry key="..\:/Workspace/Vet System/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.182" />
+        <entry key="..\:/Workspace/Vet System/app/src/main/res/drawable/off_visibility_password.xml" value="0.1615" />
+        <entry key="..\:/Workspace/Vet System/app/src/main/res/layout/activity_login.xml" value="0.18432971014492755" />
+        <entry key="..\:/Workspace/Vet System/app/src/main/res/layout/activity_main.xml" value="0.18432971014492755" />
+        <entry key="..\:/Workspace/Vet System/app/src/main/res/layout/activity_main2.xml" value="0.23596014492753623" />
+        <entry key="..\:/Workspace/Vet System/app/src/main/res/layout/activity_register.xml" value="0.23596014492753623" />
+        <entry key="..\:/Workspace/Vet System/app/src/main/res/layout/alert_dialog.xml" value="0.23596014492753623" />
+        <entry key="..\:/Workspace/Vet System/app/src/main/res/layout/change_dialog.xml" value="0.23596014492753623" />
+        <entry key="..\:/Workspace/Vet System/app/src/main/res/layout/fingerprint_dialog.xml" value="0.18432971014492755" />
+        <entry key="..\:/Workspace/Vet System/app/src/main/res/layout/fragment_app_setting.xml" value="0.23596014492753623" />
+        <entry key="..\:/Workspace/Vet System/app/src/main/res/layout/fragment_home.xml" value="0.23596014492753623" />
+        <entry key="..\:/Workspace/Vet System/app/src/main/res/layout/fragment_my_profile.xml" value="0.264" />
+        <entry key="..\:/Workspace/Vet System/app/src/main/res/layout/logout_layout.xml" value="0.23596014492753623" />
+        <entry key="..\:/Workspace/Vet System/app/src/main/res/layout/main_item.xml" value="0.228125" />
+        <entry key="..\:/Workspace/Vet System/app/src/main/res/layout/nav_header_home.xml" value="0.23596014492753623" />
+        <entry key="..\:/Workspace/Vet System/app/src/main/res/layout/progresing_dilog.xml" value="0.23596014492753623" />
+        <entry key="..\:/Workspace/Vet System/app/src/main/res/layout/simple_spinner_item.xml" value="0.228125" />
+        <entry key="..\:/Workspace/Vet System/app/src/main/res/layout/spinner_layout.xml" value="0.228125" />
+        <entry key="..\:/Workspace/Vet System/app/src/main/res/layout/spinner_selected_item.xml" value="0.228125" />
+        <entry key="..\:/Workspace/Vet System/app/src/main/res/layout/tooltip_layout.xml" value="0.23596014492753623" />
+        <entry key="..\:/Workspace/Vet System/app/src/main/res/menu/navigation_menu.xml" value="0.228125" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

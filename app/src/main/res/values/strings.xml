@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Vet System</string>
+    <string name="your_name">App name here</string>
+    <string name="description">Your description here</string>
+    <string name="company">A-Cube Software Technology Pvt. Ltd.</string>
+    <string name="login">Login</string>
+    <string name="save">Save</string>
+    <string name="signup">Signup</string>
+    <string name="remember_me">Remember me</string>
+    <string name="ok">OK</string>
+    <string name="place_Figerprint">Place Your Fingerprint</string>
+    <string name="fingerprint">Lift and rest  your finger tip on <br>Biometric Sensor.</br></string>
+    <string name="internt_problem">There is no or poor internet <br>Connection. Please connect to stable</br> <br>internet connection and try again.</br> </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- to toggle the open close button of the navigation drawer -->
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
+
+    <string name="alert_notification">Alert Notification</string>
+    <string name="terms_and_coditions_privacy_statement">   Terms and Conditions.  Privacy Statement</string>
+    <string name="_2020_js_bank_all_rights_reserved">   ©2022 A-Cube, All Rights Reserved</string>
+    <string name="password">************</string>
+    <string name="add_edit_email">Add/Edit Email</string>
+
+</resources>
