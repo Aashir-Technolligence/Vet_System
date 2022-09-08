@@ -19,31 +19,41 @@ class HomeFragment : BaseFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater , R.layout.fragment_home ,container ,false)
-        initActivityView(true , getShopName())
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
+        initActivityView(true, getShopName())
         setRecyclerView()
         return binding.root
     }
 
     private fun setRecyclerView() {
         val model: ArrayList<MenuModel> = ArrayList()
-        model.add(MenuModel("first" , R.drawable.aboutus))
-        model.add(MenuModel("sec" , R.drawable.accountandkyc))
-        model.add(MenuModel("third" , R.drawable.facedetection))
-        model.add(MenuModel("fount" , R.drawable.email))
-        model.add(MenuModel("first" , R.drawable.aboutus))
-        model.add(MenuModel("sec" , R.drawable.accountandkyc))
-        model.add(MenuModel("third" , R.drawable.facedetection))
-        model.add(MenuModel("App Setting" , R.drawable.settings))
+        model.add(MenuModel("first", R.drawable.aboutus))
+        model.add(MenuModel("sec", R.drawable.accountandkyc))
+        model.add(MenuModel("third", R.drawable.facedetection))
+        model.add(MenuModel("fount", R.drawable.email))
+        model.add(MenuModel("first", R.drawable.aboutus))
+        model.add(MenuModel("Order Management", R.drawable.accountandkyc))
+        model.add(MenuModel("Orders", R.drawable.facedetection))
+        model.add(MenuModel("App Setting", R.drawable.settings))
         val myRecyclerViewAdapter = MainPageAdapter(model)
-        binding.recyclerView.layoutManager = GridLayoutManager(requireContext(),calculateNoOfColumns(requireContext()))
+        binding.recyclerView.layoutManager =
+            GridLayoutManager(requireContext(), calculateNoOfColumns(requireContext()))
         binding.recyclerView.adapter = myRecyclerViewAdapter
         myRecyclerViewAdapter.SetOnValue(object : MainPageAdapter.onclickListener {
             override fun onclick(obj: MenuModel) {
-              val bundle = Bundle()
-                bundle.putString("type" , obj.head)
-                if(obj.head == "App Setting")
-                loadFragment(R.id.action_homeFragment_to_appSetting)
+                val bundle = Bundle()
+                bundle.putString("type", obj.head)
+                when(obj.head){
+                    "App Setting"->{
+                        loadFragment(R.id.action_homeFragment_to_appSetting)
+                    }
+                    "Orders"->{
+                        loadFragment(R.id.action_homeFragment_to_orders)
+                    }
+                    "Order Management"->{
+                        loadFragment(R.id.action_homeFragment_to_orderManagement)
+                    }
+                }
             }
         })
     }

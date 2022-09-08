@@ -5,8 +5,11 @@
 
     <data>
         <variable
-            name="appModel"
-            type="com.aash.vetsystem.models.AppDataMode" />
+            name="appname"
+            type="String" />
+        <variable
+            name="description"
+            type="String" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -65,17 +68,16 @@
                         app:layout_constraintGuide_begin="@dimen/_15sdp" />
 
 
-                    <EditText
+                    <TextView
                         android:id="@+id/edtAppName"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:background="@drawable/constraint_bg"
-                        android:editable="false"
                         android:hint="App name"
                         android:layout_marginTop="@dimen/_60sdp"
                         android:inputType="textPersonName"
                         android:maxLength="30"
-                        android:text="@{appModel.appName.toString()}"
+                        android:text="@{appname}"
                         android:paddingLeft="@dimen/_10sdp"
                         android:paddingTop="@dimen/_8sdp"
                         android:paddingBottom="@dimen/_8sdp"
@@ -98,19 +100,19 @@
                         app:layout_constraintEnd_toStartOf="@+id/right2"
                         app:layout_constraintTop_toTopOf="@+id/edtAppName" />
 
-                    <EditText
+                    <TextView
                         android:id="@+id/edtDescription"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:background="@drawable/constraint_bg"
-                        android:hint="Description"
                         android:inputType="textPersonName"
-                        android:maxLength="30"
-                        android:text="@{appModel.description.toString()}"
+                        android:text="@{description}"
+                        android:hint="Description"
                         android:paddingLeft="@dimen/_10sdp"
                         android:paddingTop="@dimen/_8sdp"
-                        android:paddingBottom="@dimen/_8sdp"
+                        android:textColor="@color/black"
                         android:textColorHint="@color/black"
+                        android:paddingBottom="@dimen/_8sdp"
                         android:editable="false"
                         android:layout_marginTop="@dimen/_20sdp"
                         android:textSize="@dimen/_10sdp"
@@ -119,7 +121,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/edtAppName" />
 
                     <TextView
-                        android:id="@+id/txtChangeWhatsapp"
+                        android:id="@+id/txtChangeDescription"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="@dimen/_12sdp"
@@ -138,6 +140,7 @@
                         android:layout_marginTop="@dimen/_20sdp"
                         app:cardBackgroundColor="@color/offwhite"
                         app:cardCornerRadius="@dimen/_12sdp"
+                        android:visibility="gone"
                         app:cardPreventCornerOverlap="true"
                         app:layout_constraintEnd_toStartOf="@id/right2"
                         app:layout_constraintStart_toEndOf="@id/left2"

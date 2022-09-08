@@ -54,22 +54,32 @@ class myProfileFragment : BaseFragment() {
         binding.profileImage.setOnClickListener {
             checkPermissionForGallery()
         }
-        val value = "pass"
         binding.txtChangePassword.setOnClickListener {
             val onclick = object : onclick {
                 override fun changeValue(value: String) {
-                    toast(value)
+                    DataHandler.userModel.password = value
+                    binding.user = DataHandler.userModel
                 }
             }
             showAlertChange("password", onclick)
         }
         binding.txtChangeEmail.setOnClickListener {
-//           showAlertChange("email")
-            toast(value)
+            val onclick = object : onclick {
+                override fun changeValue(value: String) {
+                    DataHandler.userModel.email = value
+                    binding.user = DataHandler.userModel
+                }
+            }
+            showAlertChange("email", onclick)
         }
         binding.txtChangeWhatsapp.setOnClickListener {
-//           showAlertChange("whatsapp")
-            toast(value)
+            val onclick = object : onclick {
+                override fun changeValue(value: String) {
+                    DataHandler.userModel.whatsApp = value
+                    binding.user = DataHandler.userModel
+                }
+            }
+            showAlertChange("whatsapp", onclick)
         }
     }
 

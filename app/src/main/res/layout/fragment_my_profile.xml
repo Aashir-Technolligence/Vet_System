@@ -66,7 +66,7 @@
                         app:layout_constraintGuide_begin="@dimen/_15sdp" />
 
 
-                    <EditText
+                    <TextView
                         android:id="@+id/edtTxtName"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -87,7 +87,7 @@
                         app:layout_constraintStart_toStartOf="@+id/left2"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <EditText
+                    <TextView
                         android:id="@+id/edtTxtPassword"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -117,7 +117,7 @@
                         app:layout_constraintEnd_toStartOf="@+id/right2"
                         app:layout_constraintTop_toTopOf="@+id/edtTxtPassword" />
 
-                    <EditText
+                    <TextView
                         android:id="@+id/edtTxtPhone"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -137,7 +137,7 @@
                         app:layout_constraintStart_toStartOf="@+id/left2"
                         app:layout_constraintTop_toBottomOf="@+id/edtTxtPassword" />
 
-                    <EditText
+                    <TextView
                         android:id="@+id/edtTxtWhatsapp"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -169,7 +169,7 @@
                         app:layout_constraintEnd_toStartOf="@+id/right2"
                         app:layout_constraintTop_toTopOf="@+id/edtTxtWhatsapp" />
 
-                    <EditText
+                    <TextView
                         android:id="@+id/edtTxtEmail"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"

@@ -16,6 +16,12 @@
         <action
             android:id="@+id/action_homeFragment_to_appSetting"
             app:destination="@id/appSetting" />
+        <action
+            android:id="@+id/action_homeFragment_to_orderManagement"
+            app:destination="@id/orderManagement" />
+        <action
+            android:id="@+id/action_homeFragment_to_orders"
+            app:destination="@id/orders" />
     </fragment>
     <fragment
         android:id="@+id/myProfileFragment"
@@ -25,4 +31,14 @@
         android:id="@+id/appSetting"
         android:name="com.aash.vetsystem.fragments.setting.AppSetting"
         android:label="AppSetting" />
+    <fragment
+        android:id="@+id/orderManagement"
+        android:name="com.aash.vetsystem.fragments.orders.OrderManagement"
+        android:label="fragment_order_management"
+        tools:layout="@layout/fragment_order_management" />
+    <fragment
+        android:id="@+id/orders"
+        android:name="com.aash.vetsystem.fragments.orders.Orders"
+        android:label="fragment_orders"
+        tools:layout="@layout/fragment_orders" />
 </navigation>

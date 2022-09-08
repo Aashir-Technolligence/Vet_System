@@ -7,8 +7,10 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
-import android.os.PatternMatcher
 import android.provider.Settings
+import android.text.InputFilter
+import android.text.InputFilter.LengthFilter
+import android.text.InputType
 import android.util.Patterns
 import android.view.View
 import android.view.inputmethod.InputMethodManager
@@ -19,16 +21,14 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.aash.vetsystem.Preferences.VetPreferences
 import com.aash.vetsystem.R
-import com.aash.vetsystem.utils.gone
-import com.aash.vetsystem.utils.visible
 import com.aash.vetsystem.databinding.AlertDialogBinding
 import com.aash.vetsystem.databinding.ChangeDialogBinding
 import com.aash.vetsystem.dialog.ProgressBarDialog
-import java.util.regex.Pattern
+import com.aash.vetsystem.utils.gone
+import com.aash.vetsystem.utils.visible
 
 
 open class BaseFragment : Fragment() {
-    lateinit var rootView: View
     lateinit var toolbarBackBtn: ImageView
     lateinit var toolbarNavBtn: ImageView
     lateinit var toolbarText: TextView
@@ -36,21 +36,20 @@ open class BaseFragment : Fragment() {
     lateinit var alertDialog: Dialog
     lateinit var progressBarDialogRegister: ProgressBarDialog
 
-    fun getShopName():String{
+    fun getShopName(): String {
         pref = VetPreferences(requireContext())
         return pref.company.toString()
     }
 
-    fun initActivityView(mainPage : Boolean , head: String) {
+    fun initActivityView(mainPage: Boolean, head: String) {
         toolbarBackBtn = requireActivity().findViewById(R.id.imageBack)
         toolbarNavBtn = requireActivity().findViewById(R.id.imageNav)
         toolbarText = requireActivity().findViewById(R.id.txtToolbarHead)
         toolbarText.text = head
-        if(mainPage)
-        {
+        if (mainPage) {
             toolbarNavBtn.visible()
             toolbarBackBtn.gone()
-        }else{
+        } else {
             toolbarBackBtn.visible()
             toolbarNavBtn.gone()
         }
@@ -114,7 +113,7 @@ open class BaseFragment : Fragment() {
     }
 
     fun toast(value: String) {
-        Toast.makeText(context , value , Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, value, Toast.LENGTH_SHORT).show()
     }
 
     open fun calculateNoOfColumns(context: Context): Int {
@@ -137,53 +136,75 @@ open class BaseFragment : Fragment() {
         }
         dialog.show()
     }
+
     private fun openApplicationSetting() {
         val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
         val uri = Uri.fromParts("package", requireActivity().packageName, null)
         intent.data = uri
         startActivity(intent)
     }
-    fun showAlertChange(stMessage: String? , onclick: onclick){
+
+    fun showAlertChange(stMessage: String?, onclick: onclick) {
         val binding = ChangeDialogBinding.inflate(layoutInflater)
         val dialog = Dialog(requireActivity())
-        dialog.setCancelable(true)
+        dialog.setCancelable(false)
         dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         dialog.setContentView(binding.root)
-        when(stMessage){
-            "password"->{
+        when (stMessage) {
+            "password" -> {
                 binding.txtTitle.text = "Change Password"
+                binding.edtText.inputType = InputType.TYPE_TEXT_VARIATION_PASSWORD
+                binding.edtText.filters = arrayOf<InputFilter>(LengthFilter(10))
             }
-            "email"->{
+            "email" -> {
                 binding.txtTitle.text = "Add/Change Email"
+                binding.edtText.inputType = InputType.TYPE_CLASS_TEXT
+                binding.edtText.filters = arrayOf<InputFilter>(LengthFilter(30))
             }
-            "whatsapp"->{
+            "whatsapp" -> {
                 binding.txtTitle.text = "Change Whatsapp"
+                binding.edtText.inputType = InputType.TYPE_CLASS_NUMBER
+                binding.edtText.filters = arrayOf<InputFilter>(LengthFilter(11))
             }
-            "appname"->{
+            "appname" -> {
                 binding.txtTitle.text = "Change AppName"
+                binding.edtText.inputType = InputType.TYPE_CLASS_TEXT
+                binding.edtText.filters = arrayOf<InputFilter>(LengthFilter(12))
             }
-            "description"->{
+            "description" -> {
                 binding.txtTitle.text = "Change Description"
+                binding.edtText.inputType = InputType.TYPE_CLASS_TEXT
+                binding.edtText.filters = arrayOf<InputFilter>(LengthFilter(40))
             }
         }
 
         binding.btnAllow.setOnClickListener {
             val value = binding.edtText.text.toString()
-            if(value.isEmpty())
-                toast("Please enter s")
-            else if(stMessage.equals("whatsapp"))
-                if(value.length !=11 || !value.startsWith("03"))
+            if (value.isEmpty())
+                toast("Please enter value")
+            else if (stMessage.equals("whatsapp")) {
+                if (value.length != 11 || !value.startsWith("03"))
                     toast("Please enter valid whatsapp#")
-            else if(stMessage.equals("email"))
-                if(!Patterns.EMAIL_ADDRESS.matcher(value).matches())
+                else{
+                    onclick.changeValue(value)
+                    dialog.dismiss()
+                }
+            } else if (stMessage.equals("email")) {
+                if (!Patterns.EMAIL_ADDRESS.matcher(value).matches())
                     toast("Please enter valid email address")
-            onclick.changeValue(value)
-            dialog.dismiss()
+                else{
+                    onclick.changeValue(value)
+                    dialog.dismiss()
+                }
+            } else {
+                onclick.changeValue(value)
+                dialog.dismiss()
+            }
         }
         dialog.show()
     }
 
-    interface onclick{
-        fun changeValue(value : String)
+    interface onclick {
+        fun changeValue(value: String)
     }
 }

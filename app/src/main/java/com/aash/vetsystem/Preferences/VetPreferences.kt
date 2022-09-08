@@ -36,7 +36,15 @@ class VetPreferences(context: Context) {
     var image: String?
         get() = MAOSharePreference.getString("logo", "")
         set(image) {
-            prefsEditor.putString("logo", description).commit()
+            prefsEditor.putString("logo", image).commit()
+        }
+
+    var finger: Boolean?
+        get() = MAOSharePreference.getBoolean("finger", false)
+        set(finger) {
+            if (finger != null) {
+                prefsEditor.putBoolean("finger", finger).commit()
+            }
         }
 
     init {
