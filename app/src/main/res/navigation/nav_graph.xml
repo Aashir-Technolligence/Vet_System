@@ -13,9 +13,16 @@
         <action
             android:id="@+id/action_homeFragment_to_myProfileFragment"
             app:destination="@id/myProfileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_appSetting"
+            app:destination="@id/appSetting" />
     </fragment>
     <fragment
         android:id="@+id/myProfileFragment"
         android:name="com.aash.vetsystem.fragments.profile.myProfileFragment"
         android:label="myProfileFragment" />
+    <fragment
+        android:id="@+id/appSetting"
+        android:name="com.aash.vetsystem.fragments.setting.AppSetting"
+        android:label="AppSetting" />
 </navigation>

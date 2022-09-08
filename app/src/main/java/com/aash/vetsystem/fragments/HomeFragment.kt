@@ -34,7 +34,7 @@ class HomeFragment : BaseFragment() {
         model.add(MenuModel("first" , R.drawable.aboutus))
         model.add(MenuModel("sec" , R.drawable.accountandkyc))
         model.add(MenuModel("third" , R.drawable.facedetection))
-        model.add(MenuModel("fount" , R.drawable.email))
+        model.add(MenuModel("App Setting" , R.drawable.settings))
         val myRecyclerViewAdapter = MainPageAdapter(model)
         binding.recyclerView.layoutManager = GridLayoutManager(requireContext(),calculateNoOfColumns(requireContext()))
         binding.recyclerView.adapter = myRecyclerViewAdapter
@@ -42,7 +42,8 @@ class HomeFragment : BaseFragment() {
             override fun onclick(obj: MenuModel) {
               val bundle = Bundle()
                 bundle.putString("type" , obj.head)
-                loadFragment(R.id.action_homeFragment_to_myProfileFragment , bundle)
+                if(obj.head == "App Setting")
+                loadFragment(R.id.action_homeFragment_to_appSetting)
             }
         })
     }

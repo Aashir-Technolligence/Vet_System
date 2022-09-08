@@ -7,11 +7,14 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
+import android.os.PatternMatcher
 import android.provider.Settings
+import android.util.Patterns
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.aash.vetsystem.Preferences.VetPreferences
@@ -19,7 +22,9 @@ import com.aash.vetsystem.R
 import com.aash.vetsystem.utils.gone
 import com.aash.vetsystem.utils.visible
 import com.aash.vetsystem.databinding.AlertDialogBinding
+import com.aash.vetsystem.databinding.ChangeDialogBinding
 import com.aash.vetsystem.dialog.ProgressBarDialog
+import java.util.regex.Pattern
 
 
 open class BaseFragment : Fragment() {
@@ -108,6 +113,10 @@ open class BaseFragment : Fragment() {
         imm.hideSoftInputFromWindow(requireView().applicationWindowToken, 0)
     }
 
+    fun toast(value: String) {
+        Toast.makeText(context , value , Toast.LENGTH_SHORT).show()
+    }
+
     open fun calculateNoOfColumns(context: Context): Int {
         val displayMetrics = context.resources.displayMetrics
         val dpWidth = displayMetrics.widthPixels / displayMetrics.density
@@ -133,5 +142,48 @@ open class BaseFragment : Fragment() {
         val uri = Uri.fromParts("package", requireActivity().packageName, null)
         intent.data = uri
         startActivity(intent)
+    }
+    fun showAlertChange(stMessage: String? , onclick: onclick){
+        val binding = ChangeDialogBinding.inflate(layoutInflater)
+        val dialog = Dialog(requireActivity())
+        dialog.setCancelable(true)
+        dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog.setContentView(binding.root)
+        when(stMessage){
+            "password"->{
+                binding.txtTitle.text = "Change Password"
+            }
+            "email"->{
+                binding.txtTitle.text = "Add/Change Email"
+            }
+            "whatsapp"->{
+                binding.txtTitle.text = "Change Whatsapp"
+            }
+            "appname"->{
+                binding.txtTitle.text = "Change AppName"
+            }
+            "description"->{
+                binding.txtTitle.text = "Change Description"
+            }
+        }
+
+        binding.btnAllow.setOnClickListener {
+            val value = binding.edtText.text.toString()
+            if(value.isEmpty())
+                toast("Please enter s")
+            else if(stMessage.equals("whatsapp"))
+                if(value.length !=11 || !value.startsWith("03"))
+                    toast("Please enter valid whatsapp#")
+            else if(stMessage.equals("email"))
+                if(!Patterns.EMAIL_ADDRESS.matcher(value).matches())
+                    toast("Please enter valid email address")
+            onclick.changeValue(value)
+            dialog.dismiss()
+        }
+        dialog.show()
+    }
+
+    interface onclick{
+        fun changeValue(value : String)
     }
 }

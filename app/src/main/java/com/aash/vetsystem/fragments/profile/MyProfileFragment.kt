@@ -11,6 +11,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.databinding.DataBindingUtil
 import com.aash.vetsystem.R
@@ -53,14 +54,22 @@ class myProfileFragment : BaseFragment() {
         binding.profileImage.setOnClickListener {
             checkPermissionForGallery()
         }
+        val value = "pass"
         binding.txtChangePassword.setOnClickListener {
-            showAlertChange("password")
+            val onclick = object : onclick {
+                override fun changeValue(value: String) {
+                    toast(value)
+                }
+            }
+            showAlertChange("password", onclick)
         }
         binding.txtChangeEmail.setOnClickListener {
-            showAlertChange("email")
+//           showAlertChange("email")
+            toast(value)
         }
         binding.txtChangeWhatsapp.setOnClickListener {
-            showAlertChange("whatsapp")
+//           showAlertChange("whatsapp")
+            toast(value)
         }
     }
 
@@ -123,26 +132,4 @@ class myProfileFragment : BaseFragment() {
                 DataHandler.userModel.profileImage = base64Profile
             }
         }
-
-    fun showAlertChange(stMessage: String?) {
-        val binding = ChangeDialogBinding.inflate(layoutInflater)
-        val dialog = Dialog(requireActivity())
-        dialog.setCancelable(true)
-        dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        dialog.setContentView(binding.root)
-        when(stMessage){
-            "password"->{
-                binding.txtTitle.text = "Change Password"
-            }
-            "email"->{
-                binding.txtTitle.text = "Add/Change Email"
-            }
-            "whatsapp"->{
-                binding.txtTitle.text = "Change Whatsapp"
-            }
-        }
-
-        binding.btnAllow.setOnClickListener { dialog.dismiss() }
-        dialog.show()
-    }
 }
