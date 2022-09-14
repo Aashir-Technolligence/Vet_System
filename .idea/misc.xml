@@ -22,14 +22,18 @@
         <entry key="..\:/Workspace/Vet System/app/src/main/res/layout/activity_main.xml" value="0.18432971014492755" />
         <entry key="..\:/Workspace/Vet System/app/src/main/res/layout/activity_main2.xml" value="0.23596014492753623" />
         <entry key="..\:/Workspace/Vet System/app/src/main/res/layout/activity_register.xml" value="0.23596014492753623" />
+        <entry key="..\:/Workspace/Vet System/app/src/main/res/layout/addneworder_dialog.xml" value="0.2421875" />
         <entry key="..\:/Workspace/Vet System/app/src/main/res/layout/alert_dialog.xml" value="0.23596014492753623" />
         <entry key="..\:/Workspace/Vet System/app/src/main/res/layout/change_dialog.xml" value="0.23596014492753623" />
         <entry key="..\:/Workspace/Vet System/app/src/main/res/layout/fingerprint_dialog.xml" value="0.18432971014492755" />
         <entry key="..\:/Workspace/Vet System/app/src/main/res/layout/fragment_app_setting.xml" value="0.23596014492753623" />
         <entry key="..\:/Workspace/Vet System/app/src/main/res/layout/fragment_home.xml" value="0.23596014492753623" />
         <entry key="..\:/Workspace/Vet System/app/src/main/res/layout/fragment_my_profile.xml" value="0.264" />
+        <entry key="..\:/Workspace/Vet System/app/src/main/res/layout/fragment_order_management.xml" value="0.2421875" />
+        <entry key="..\:/Workspace/Vet System/app/src/main/res/layout/fragment_orders.xml" value="0.2" />
         <entry key="..\:/Workspace/Vet System/app/src/main/res/layout/logout_layout.xml" value="0.23596014492753623" />
         <entry key="..\:/Workspace/Vet System/app/src/main/res/layout/main_item.xml" value="0.228125" />
+        <entry key="..\:/Workspace/Vet System/app/src/main/res/layout/myorder.xml" value="0.264" />
         <entry key="..\:/Workspace/Vet System/app/src/main/res/layout/nav_header_home.xml" value="0.23596014492753623" />
         <entry key="..\:/Workspace/Vet System/app/src/main/res/layout/progresing_dilog.xml" value="0.23596014492753623" />
         <entry key="..\:/Workspace/Vet System/app/src/main/res/layout/simple_spinner_item.xml" value="0.228125" />

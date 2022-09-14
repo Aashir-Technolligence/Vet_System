@@ -4,6 +4,7 @@
     <string name="description">Your description here</string>
     <string name="company">A-Cube Software Technology Pvt. Ltd.</string>
     <string name="login">Login</string>
+    <string name="addnew">+ Add New</string>
     <string name="save">Save</string>
     <string name="signup">Signup</string>
     <string name="remember_me">Remember me</string>
@@ -23,5 +24,12 @@
     <string name="_2020_js_bank_all_rights_reserved">   ©2022 A-Cube, All Rights Reserved</string>
     <string name="password">************</string>
     <string name="add_edit_email">Add/Edit Email</string>
+    <string name="additem">Add New Order</string>
+    <string name="submit">Submit</string>
+    <string name="cancel">Cancel</string>
+    <string name="item">Item</string>
+    <string name="price">Price</string>
+    <string name="comment">Comment</string>
+    <string name="quantity">Quantity</string>
 
 </resources>

@@ -54,7 +54,7 @@
                             android:id="@+id/imageBack"
                             android:layout_width="@dimen/_40sdp"
                             android:layout_height="@dimen/_30sdp"
-                            android:src="@drawable/backarrow"
+                            android:src="@drawable/backbutton"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toEndOf="@+id/imageNav"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -65,14 +65,14 @@
                     <TextView
                         android:id="@+id/txtToolbarHead"
                         style="@style/textviewWhite"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/_20sdp"
-                        android:textSize="@dimen/_22sdp"
+                        android:maxLength="17"
+                        android:textSize="@dimen/_20sdp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toEndOf="@+id/image"
+                        app:layout_constraintStart_toStartOf="@+id/image"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <View
